@@ -8,7 +8,7 @@
         <style>
                 body {
                     text-align: center;
-                    background-color: rgb(0, 0, 0);
+                    background: linear-gradient(rgb(0, 0, 0), rgb(29, 0, 26));
                     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
                     color: white;
                 }
@@ -21,6 +21,11 @@
                 .skills-container {
                     display: flex;
                     justify-content: center;
+                    background-image: linear-gradient(rgba(0, 0, 0, 0.87), rgba(47, 0, 43, 0.7)), url('code.jpg');
+                    background-size: cover;
+                    width: 100%;
+                    height: 600px;
+                    background-position: center;
                 }
                 .hobbies-container img {
                     width: 500px;
@@ -49,15 +54,12 @@
             </div>
         </div>
 
-        <h1>Skills:</h1>
-        <div class="skills-container">
+        
+        <div class="skills-container">  
             <div class="skill1">
+                <h1>Skills:</h1>
                 <h3>Programming (HTML, CSS, C#)</h3>
             </div>
-        </div>
-
-        <div class="skill-image">
-            <img src="code.jpg">
         </div>
 
     </body>
