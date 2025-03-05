@@ -1,79 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tomás</title>
-
-        <style>
-                body {
-                    text-align: center;
-                    background: linear-gradient(rgb(0, 0, 0), rgb(29, 0, 26));
-                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                    color: white;
-                }
-                body h1 {
-                    font-size: 3rem;
-                    font-weight: bold;
-                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-                }
-                .hobbies-container {
-                    display: flex;
-                    justify-content: center;
-                    margin-top: 20px;
-                    margin-bottom: 70px;
-                }
-                .hobbies-container img {
-                    width: 500px;
-                    height: 500px;
-                }
-                .skills-container {
-                    display: flex;
-                    justify-content: center;
-                    background-image: linear-gradient(rgba(0, 0, 0, 0.87), rgba(47, 0, 43, 0.763)), url('code.jpg');
-                    background-size: cover;
-                    width: 100%;
-                    height: 600px;
-                    background-position: center;
-                    align-items: center;
-                }
-                .skills-container h1 {
-                    font-size: 3rem;
-                    font-weight: bold;
-                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-                }
-
-
-                
-        </style>
-
-    </head>
-    <body>
-        <h1>About me:</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="about-me">
+        <h1>About Me</h1>
         <p>My name is Tomás, I'm 19, and these are some of my hobbies!</p>
-    
-        <div class="hobbies-container">
-            <div class="hobby1">
-                <h2>Watching Anime</h2>
-                <img src="grimjaw.jpg">
-            </div>
-            <div class="hobby2">
-                <h2>Listening to Music</h2>
-                <img src="juice.jpg">
-            </div>
-            <div class="hobby3">
-                <h2>Going Out</h2>
-                <img src="goingout.jpg">
-            </div>
-        </div>
+    </section>
 
-        
-        <div class="skills-container">  
-            <div class="skill1">
-                <h1>Skills:</h1>
-                <h3>Programming (HTML, CSS, C#)</h3>
-            </div>
+    <section class="hobbies">
+        <div class="hobby">
+            <h2>Watching Anime</h2>
+            <img src="grimjaw.jpg" alt="Watching Anime">
         </div>
-
-    </body>
+        <div class="hobby">
+            <h2>Listening to Music</h2>
+            <img src="juice.jpg" alt="Listening to Music">
+        </div>
+        <div class="hobby">
+            <h2>Going Out</h2>
+            <img src="goingout.jpg" alt="Going Out">
+        </div>
+    </section>
+</body>
 </html>
