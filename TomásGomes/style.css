@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background: linear-gradient(to right, #6a0dadd1, black 30%, black 70%, #6a0dadd1);
+    background: linear-gradient(to right, #32054a, black 20%, black 80%, #32054a);
     font-family: 'Arial', sans-serif;
     color: white;
     margin: 0;
@@ -47,6 +47,10 @@ body {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.hobby h2 {
+    font-weight: bold;
+}
+
 .hobby:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 15px rgba(208, 0, 255, 0.671);
@@ -62,4 +66,3 @@ body {
 .hobby img:hover {
     transform: scale(1.05);
 }
-
