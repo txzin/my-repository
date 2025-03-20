@@ -37,7 +37,7 @@ body {
     flex-wrap: wrap;
     margin-top: 20px;
     padding: 20px;
-    margin-bottom: 400px;
+    margin-bottom: 350px;
 }
 
 .hobby {
@@ -97,6 +97,7 @@ body {
     font-size: 18px;
     color: #d1d1d1;
     margin-top: 10px;
+    font-weight: bolder;
 }
 
 .history-image img {
