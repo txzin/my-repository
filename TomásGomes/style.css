@@ -2,7 +2,7 @@ body {
     text-align: center;
     background: linear-gradient(to right, #32054a, black 20%, black 80%, #32054a);
     font-family: 'Arial', sans-serif;
-    color: white;                                                                                   /*Estiliza a página em geral*/
+    color: white;                                                                                   
     margin: 0;
     padding: 0;
 }
@@ -10,7 +10,7 @@ body {
 .about-me h1 {
     font-size: 3rem;
     font-weight: bold;
-    position: relative;             /*Estiliza o título na class about me*/
+    position: relative;             
     display: inline-block;
 }
 
@@ -18,7 +18,7 @@ body {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -10px;                          /*Animação para o título*/   
+    bottom: -10px;                         
     width: 100%;                            
     height: 4px;
     background: #9604ff;
@@ -26,14 +26,14 @@ body {
 }
 
 .about-me h1:hover::after {
-    width: 50%;                /*Distância da animação na linha por baixo do título*/             
+    width: 50%;                          
 }
 
 .hobbies {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;                  /*Estiliza a class dos Hobbies*/   
+    gap: 20px;                  
     flex-wrap: wrap;
     margin-top: 20px;
     padding: 20px;
@@ -43,29 +43,29 @@ body {
 .hobby {
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px;                                                          /*Estiliza cada um dos hobbies de forma igual*/   
+    padding: 15px;                                                            
     border-radius: 10px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .hobby h2 {
-    font-weight: bold;                                  /*Coloca os títulos de cada hobby em negrito*/
+    font-weight: bold;                                  
 }
 
 .hobby:hover {
     transform: scale(1.05);
-    box-shadow: 0px 0px 15px rgba(208, 0, 255, 0.671);                  /*Animação para os blocos dos hobbies*/
+    box-shadow: 0px 0px 15px rgba(208, 0, 255, 0.671);                  
 }
 
 .hobby img {
     width: 300px;
-    height: 300px;                                                          /*Estiliza as imagens nos hobbies*/
+    height: 300px;                                                          
     border-radius: 15px;
     transition: transform 0.3s ease-in-out;
 }
 
 .hobby img:hover {
-    transform: scale(1.05);                                                  /*Animação para as imagens nos hobbies*/
+    transform: scale(1.05);                                                  
 }
 
 .history {
