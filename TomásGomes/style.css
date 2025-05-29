@@ -6,18 +6,24 @@
 }
 
 body {
-  background-color: #121212;
+  background-image: url('backgroundpurple.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
   color: white;
   font-family: sans-serif;
   line-height: 1.6;
 }
 
 header {
-  background-color: #1f1f1f;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px;
+  margin: 20px;
 }
 
 header h1 {
@@ -31,7 +37,8 @@ nav a {
   font-weight: bold;
 }
 
-nav a.active, nav a:hover {
+nav a.active,
+nav a:hover {
   color: #fff;
 }
 
@@ -58,6 +65,7 @@ h2 {
   width: 280px;
   text-align: center;
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -71,13 +79,67 @@ h2 {
 }
 
 .sobre {
-background-color: rgba(112, 25, 120, 0.457);
+  background-color: rgba(112, 25, 120, 0.3);
   padding: 40px 20px;
   border-radius: 20px;
+  margin: 20px;
 }
 
 .sobre p {
   text-align: center;
   margin-bottom: 30px;
   font-size: 18px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #4b005a97;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
 }

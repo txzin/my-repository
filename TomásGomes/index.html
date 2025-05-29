@@ -19,19 +19,67 @@
     <section class="projetos">
       <h2>Meus Projetos</h2>
       <div class="grid">
-        <div class="card">
-          <img src="tsukyomi.png" alt="Projeto 1">
+        <div class="card"
+             data-title="Tsukyomi"
+             data-description="The first game I produced with a small group. I worked as a programmer."
+             data-image="tsukyomi_bg.png">
+          <img src="tsukyomi_bg.png" alt="Projeto 1">
           <h3>Tsukyomi</h3>
           <p>The first game I produced with a small group, in this project, I worked as a programmer.</p>
         </div>
-        <div class="card">
-          <img src="tsukyomi.png" alt="Projeto 1">
+        <div class="card"
+             data-title="Lily's Thrift Store"
+             data-description="My second project, also with a group. In this project, I worked as a UI/UX Designer."
+             data-image="lts_bg.png">
+          <img src="lts_bg.png" alt="Projeto 2">
           <h3>Lily's Thrift Store</h3>
-          <p>My second project, also with a group. In this project, I worked as an UI/UX Designer, my preference.</p>
+          <p>My second project, also with a group. In this project, I worked as a UI/UX Designer, my preference.</p>
         </div>
-        <!-- Adicione mais projetos aqui -->
       </div>
     </section>
   </main>
+
+  <!-- Modal de detalhes -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modal-image" src="" alt="">
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalImage = document.getElementById('modal-image');
+    const closeBtn = document.querySelector('.close-btn');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.getAttribute('data-title');
+        const description = card.getAttribute('data-description');
+        const image = card.getAttribute('data-image');
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modalImage.src = image;
+
+        modal.classList.remove('hidden');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
