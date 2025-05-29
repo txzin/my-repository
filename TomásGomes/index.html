@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tomás Gomes | Projetos</title>
+  <title>Tomás Gomes | Projects</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Tomás Gomes</h1>
     <nav>
-      <a href="index.html" class="active">Projetos</a>
-      <a href="about.html">Sobre Mim</a>
+      <a href="index.html" class="active">Projects</a>
+      <a href="about.html">About me</a>
     </nav>
   </header>
 
   <main>
     <section class="projetos">
-      <h2>Meus Projetos</h2>
+      <h2>My Projects</h2>
       <div class="grid">
         <div class="card"
              data-title="Tsukyomi"
@@ -28,12 +28,20 @@
           <p>The first game I produced with a small group, in this project, I worked as a programmer.</p>
         </div>
         <div class="card"
+             data-title="Cyber Engineer"
+             data-description="My second project, with a group of 4. I worked as a UI/UX Designer, this project was where I started liking this area."
+             data-image="cyberengineer.png">
+          <img src="cyberengineer.png" alt="Projeto 2">
+          <h3>Cyber Engineer</h3>
+          <p>My second project, with a group of 4, this time I worked as a UI/UX Designer, this project was where I started liking this area.</p>
+        </div>
+        <div class="card"
              data-title="Lily's Thrift Store"
-             data-description="My second project, also with a group. In this project, I worked as a UI/UX Designer."
+             data-description="My third project, also with a group. In this project, I worked as a UI/UX Designer once again, my preference."
              data-image="lts_bg.png">
-          <img src="lts_bg.png" alt="Projeto 2">
+          <img src="lts_bg.png" alt="Projeto 3">
           <h3>Lily's Thrift Store</h3>
-          <p>My second project, also with a group. In this project, I worked as a UI/UX Designer, my preference.</p>
+          <p>My third project, also with a group. In this project, I worked as a UI/UX Designer once again, my preference.</p>
         </div>
       </div>
     </section>
@@ -43,9 +51,13 @@
   <div id="modal" class="modal hidden">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
-      <img id="modal-image" src="" alt="">
-      <h3 id="modal-title"></h3>
-      <p id="modal-description"></p>
+      <button id="prev-btn" class="nav-btn">⟨</button>
+      <div id="carousel-slide">
+        <img id="modal-image" src="" alt="">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+      </div>
+      <button id="next-btn" class="nav-btn">⟩</button>
     </div>
   </div>
 
@@ -56,18 +68,29 @@
     const modalDescription = document.getElementById('modal-description');
     const modalImage = document.getElementById('modal-image');
     const closeBtn = document.querySelector('.close-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
 
-    cards.forEach(card => {
+    const projects = Array.from(cards).map(card => ({
+      title: card.getAttribute('data-title'),
+      description: card.getAttribute('data-description'),
+      image: card.getAttribute('data-image')
+    }));
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      const project = projects[index];
+      modalTitle.textContent = project.title;
+      modalDescription.textContent = project.description;
+      modalImage.src = project.image;
+      modal.classList.remove('hidden');
+      currentIndex = index;
+    }
+
+    cards.forEach((card, index) => {
       card.addEventListener('click', () => {
-        const title = card.getAttribute('data-title');
-        const description = card.getAttribute('data-description');
-        const image = card.getAttribute('data-image');
-
-        modalTitle.textContent = title;
-        modalDescription.textContent = description;
-        modalImage.src = image;
-
-        modal.classList.remove('hidden');
+        openModal(index);
       });
     });
 
@@ -79,6 +102,16 @@
       if (e.target === modal) {
         modal.classList.add('hidden');
       }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+      openModal(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % projects.length;
+      openModal(currentIndex);
     });
   </script>
 </body>
