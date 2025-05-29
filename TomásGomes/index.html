@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tomás Gomes | Projects</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -23,25 +23,27 @@
              data-title="Tsukyomi"
              data-description="The first game I produced with a small group. I worked as a programmer."
              data-image="tsukyomi_bg.png">
-          <img src="tsukyomi_bg.png" alt="Projeto 1">
+          <img src="tsukyomi_bg.png" alt="Projeto 1" />
           <h3>Tsukyomi</h3>
-          <p>The first game I produced with a small group, in this project, I worked as a programmer.</p>
+
         </div>
+
         <div class="card"
              data-title="Cyber Engineer"
              data-description="My second project, with a group of 4. I worked as a UI/UX Designer, this project was where I started liking this area."
              data-image="cyberengineer.png">
-          <img src="cyberengineer.png" alt="Projeto 2">
+          <img src="cyberengineer.png" alt="Projeto 2" />
           <h3>Cyber Engineer</h3>
-          <p>My second project, with a group of 4, this time I worked as a UI/UX Designer, this project was where I started liking this area.</p>
+
         </div>
+
         <div class="card"
              data-title="Lily's Thrift Store"
              data-description="My third project, also with a group. In this project, I worked as a UI/UX Designer once again, my preference."
              data-image="lts_bg.png">
-          <img src="lts_bg.png" alt="Projeto 3">
+          <img src="lts_bg.png" alt="Projeto 3" />
           <h3>Lily's Thrift Store</h3>
-          <p>My third project, also with a group. In this project, I worked as a UI/UX Designer once again, my preference.</p>
+
         </div>
       </div>
     </section>
@@ -53,7 +55,7 @@
       <span class="close-btn">&times;</span>
       <button id="prev-btn" class="nav-btn">⟨</button>
       <div id="carousel-slide">
-        <img id="modal-image" src="" alt="">
+        <img id="modal-image" src="" alt="" />
         <h3 id="modal-title"></h3>
         <p id="modal-description"></p>
       </div>
@@ -98,7 +100,7 @@
       modal.classList.add('hidden');
     });
 
-    window.addEventListener('click', (e) => {
+    window.addEventListener('click', e => {
       if (e.target === modal) {
         modal.classList.add('hidden');
       }

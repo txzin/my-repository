@@ -73,8 +73,10 @@ h2 {
 
 .card img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 8px;
+  display: block;    
 }
 
 .sobre {
@@ -97,7 +99,6 @@ h2 {
   font-size: 18px;
 }
 
-/* NOVO: Perfil Tomás */
 .perfil {
   background-color: rgba(112, 25, 120, 0.3);
   padding: 40px 20px;
@@ -137,8 +138,6 @@ h2 {
   line-height: 1.6;
   text-align: left;
 }
-
-/* ---------------------- */
 
 .modal {
   position: fixed;
@@ -223,25 +222,25 @@ h2 {
   background-color: rgba(112, 25, 120, 0.3);
   padding: 40px 20px;
   border-radius: 20px;
-  margin: 40px 20px; /* AUMENTADO */
+  margin: 40px 20px;
 }
 
 .sobre {
   background-color: rgba(112, 25, 120, 0.3);
   padding: 40px 20px;
   border-radius: 20px;
-  margin: 40px 20px; /* AUMENTADO */
+  margin: 40px 20px;
 }
 
 .projetos {
   background-color: rgba(112, 25, 120, 0.3);
   padding: 40px 20px;
   border-radius: 20px;
-  margin: 40px 20px; /* AUMENTADO */
+  margin: 40px 20px; 
 }
 
 .perfil-foto {
-  width: 350px; /* aumentado de 250px para 350px */
+  width: 350px; 
   height: auto;
   border-radius: 12px;
   object-fit: cover;
