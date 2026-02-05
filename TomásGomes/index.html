@@ -1,161 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tomás Gomes | Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tomás Gomes | Visual & UI Designer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .modal {
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
-    }
-
-    .modal.visible {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    #carousel-slide {
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    #carousel-slide.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <h1>Tomás Gomes</h1>
-    <nav>
-      <a href="index.html" class="active">Projects</a>
-      <a href="about.html">About me</a>
-    </nav>
+
+  <!-- HEADER / HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Tomás Gomes</h1>
+      <h2>Visual & UI Designer</h2>
+      <p>
+        I design visually clear and coherent digital experiences, with a strong
+        focus on aesthetics, color, and composition.
+      </p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+
+    <!-- Decorative blob -->
+    <div class="blob"></div>
   </header>
 
-  <main>
-    <section class="projetos">
-      <h2>My Projects</h2>
-      <div class="grid">
-        <div class="card"
-             data-title="Tsukyomi"
-             data-description="The first game I produced with a small group. I worked as a programmer."
-             data-image="tsukyomi_bg.png">
-          <img src="tsukyomi_bg.png" alt="Projeto 1" />
-          <h3>Tsukuyomi</h3>
-        </div>
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h3>Selected Projects</h3>
 
-        <div class="card"
-             data-title="Cyber Engineer"
-             data-description="My second project, with a group of 4. I worked as a UI/UX Designer, this project was where I started liking this area."
-             data-image="cyberengineer.png">
-          <img src="cyberengineer.png" alt="Projeto 2" />
-          <h3>Cyber Engineer</h3>
-        </div>
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-image"></div>
+        <h4>Project Title</h4>
+        <span>UI / UX Design</span>
+      </article>
 
-        <div class="card"
-             data-title="Lily's Thrift Store"
-             data-description="My third project, also with a group. In this project, I worked as a UI/UX Designer once again, my preference."
-             data-image="lts_bg.png">
-          <img src="lts_bg.png" alt="Projeto 3" />
-          <h3>Lily's Thrift Store</h3>
-        </div>
-      </div>
-    </section>
-  </main>
+      <article class="project-card">
+        <div class="project-image"></div>
+        <h4>Project Title</h4>
+        <span>Visual Design</span>
+      </article>
 
-  <!-- Modal de detalhes -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <button id="prev-btn" class="nav-btn">⟨</button>
-      <div id="carousel-slide">
-        <img id="modal-image" src="" alt="" />
-        <h3 id="modal-title"></h3>
-        <p id="modal-description"></p>
-      </div>
-      <button id="next-btn" class="nav-btn">⟩</button>
+      <article class="project-card">
+        <div class="project-image"></div>
+        <h4>Project Title</h4>
+        <span>Branding</span>
+      </article>
     </div>
-  </div>
+  </section>
 
-  <script>
-    const cards = document.querySelectorAll('.card');
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
-    const modalImage = document.getElementById('modal-image');
-    const closeBtn = document.querySelector('.close-btn');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const slide = document.getElementById('carousel-slide');
+  <!-- ABOUT -->
+  <section class="about">
+    <h3>About Me</h3>
+    <p>
+      I am a Videogames & Multimedia student at Universidade Lusófona, currently
+      looking for a design internship. I enjoy working on visual identity, UI
+      design, and digital aesthetics rather than illustration.
+    </p>
+  </section>
 
-    const projects = Array.from(cards).map(card => ({
-      title: card.getAttribute('data-title'),
-      description: card.getAttribute('data-description'),
-      image: card.getAttribute('data-image')
-    }));
+  <!-- TOOLS -->
+  <section class="tools">
+    <h3>Tools</h3>
+    <ul>
+      <li>Figma</li>
+      <li>Adobe Illustrator</li>
+      <li>Photoshop</li>
+      <li>After Effects</li>
+    </ul>
+  </section>
 
-    let currentIndex = 0;
-
-    function openModal(index) {
-      const project = projects[index];
-      modalTitle.textContent = project.title;
-      modalDescription.textContent = project.description;
-      modalImage.src = project.image;
-      currentIndex = index;
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        modal.classList.add('visible');
-        slide.classList.add('show');
-      }, 10);
-    }
-
-    function closeModal() {
-      modal.classList.remove('visible');
-      slide.classList.remove('show');
-      setTimeout(() => {
-        modal.classList.add('hidden');
-      }, 400);
-    }
-
-    cards.forEach((card, index) => {
-      card.addEventListener('click', () => {
-        openModal(index);
-      });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-
-    window.addEventListener('click', e => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-
-    prevBtn.addEventListener('click', () => {
-      slide.classList.remove('show');
-      setTimeout(() => {
-        currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-        openModal(currentIndex);
-      }, 300);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      slide.classList.remove('show');
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % projects.length;
-        openModal(currentIndex);
-      }, 300);
-    });
-  </script>
-
-  <footer>
-    <p>© 2025 Tomás Gomes • <a href="tomasjgomes@gmail.com">Contact</a></p>
+  <!-- CONTACT -->
+  <footer class="contact">
+    <h3>Contact</h3>
+    <p>Email: yourname@email.com</p>
+    <p>LinkedIn / Behance / Portfolio</p>
   </footer>
+
 </body>
 </html>
