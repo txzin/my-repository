@@ -11,68 +11,84 @@
 
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Tomás Gomes</h1>
-      <h2>UI/UX and Digital Design</h2>
-      <p>
-        I design visually clear and coherent digital experiences, with a strong
-        focus on aesthetics, color, and composition.
-      </p>
-      <a href="#projects" class="btn">View Projects</a>
-    </div>
-
-    <div class="blob"></div>
-  </header>
-
-  <section id="projects" class="projects">
-    <h3>Selected Projects</h3>
-
-    <div class="projects-grid">
-      <article class="project-card">
-        <div class="project-image"></div>
-        <h4>Game - Nocturne Battlegrounds</h4>
-        <span>Role : User Experience, Tests and 3D Animation</span>
-      </article>
-
-      <article class="project-card">
-        <div class="project-image"></div>
-        <h4>Game - Lily's ThriftStore</h4>
-        <span>Role : UI/UX Design</span>
-      </article>
-
-      <article class="project-card">
-        <div class="project-image"></div>
-        <h4>Game - Cyber Engineer</h4>
-        <span>Role : UI/UX Design</span>
-      </article>
-    </div>
-  </section>
-
-  <section class="about">
-    <h3>About Me</h3>
+<header class="hero">
+  <div class="hero-content">
+    <h1><span class="accent">Tomás</span> Gomes</h1>
+    <h2>UI/UX & Digital Designer</h2>
     <p>
-      I am a Multimedia student with a background in videogame development, where most of my projects involved designing user interfaces, visual systems and interactive experiences. Working in games allowed me to develop a strong understanding of UI/UX principles, such as layout hierarchy, usability, visual clarity and user flow.
-      <br><br>
-      Although my portfolio is mainly focused on game projects, I am highly motivated to apply my UI and digital design skills to other types of products, including websites, applications and digital platforms. I enjoy adapting my design approach to different contexts and challenges, and I am always eager to learn, improve and expand my skill set beyond videogames.
+      I design visually clear and coherent digital experiences, with a strong
+      focus on aesthetics, color, and composition.
     </p>
-  </section>
+    <a href="#projects" class="btn">View Projects</a>
+  </div>
 
-  <section class="tools">
-    <h3>Tools</h3>
-    <ul>
-      <li>Figma</li>
-      <li>Adobe Illustrator</li>
-      <li>Photoshop</li>
-      <li>After Effects</li>
-    </ul>
-  </section>
+  <div class="blob"></div>
+</header>
 
-  <footer class="contact">
-    <h3>Contact : 931 121 741</h3>
-    <p>Email: tomasjgomes@gmail.com</p>
-    <p>LinkedIn / Portfolio</p>
-  </footer>
+<section id="projects" class="projects">
+  <h3>Selected Projects</h3>
 
+  <div class="projects-grid">
+    <article class="project-card"
+      data-title="Nocturne Battlegrounds"
+      data-role="User Experience, Testing & 3D Animation"
+      data-description="Multiplayer combat game where I worked on usability testing, interface flow improvements and in-game animations.">
+      <h4>Game — Nocturne Battlegrounds</h4>
+      <span>Role: UX, Testing & 3D Animation</span>
+    </article>
+
+    <article class="project-card"
+      data-title="Lily's ThriftStore"
+      data-role="UI/UX Design"
+      data-description="Cozy game project focused on clean UI, readability and intuitive navigation systems.">
+      <h4>Game — Lily's ThriftStore</h4>
+      <span>Role: UI/UX Design</span>
+    </article>
+
+    <article class="project-card"
+      data-title="Cyber Engineer"
+      data-role="UI/UX Design"
+      data-description="Sci-fi themed game where I designed the full interface system, HUD layout and visual hierarchy.">
+      <h4>Game — Cyber Engineer</h4>
+      <span>Role: UI/UX Design</span>
+    </article>
+  </div>
+</section>
+
+<section class="about">
+  <h3>About Me</h3>
+  <p>
+    I am a Multimedia student with a background in videogame development, where most of my projects involved designing user interfaces, visual systems and interactive experiences.
+    <br><br>
+    Although my portfolio is mainly focused on game projects, I am highly motivated to apply my UI and digital design skills to other types of products, including websites, applications and digital platforms.
+  </p>
+</section>
+
+<section class="tools">
+  <h3>Tools</h3>
+  <ul>
+    <li>Figma</li>
+    <li>Adobe Illustrator</li>
+    <li>Photoshop</li>
+    <li>After Effects</li>
+  </ul>
+</section>
+
+<footer class="contact">
+  <h3>Contact</h3>
+  <p>Email: tomasjgomes@gmail.com</p>
+</footer>
+
+<!-- MODAL -->
+<div class="project-modal" id="projectModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4 id="modalTitle"></h4>
+    <p class="modal-role" id="modalRole"></p>
+    <p id="modalDescription"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
