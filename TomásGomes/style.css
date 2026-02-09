@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +15,8 @@ section {
   padding: 80px 10%;
 }
 
+/* TEXT */
+
 h1, h2, h3 {
   font-weight: 700;
 }
@@ -23,6 +24,8 @@ h1, h2, h3 {
 p {
   color: #cfcfcf;
 }
+
+
 
 .hero {
   min-height: 100vh;
@@ -78,15 +81,16 @@ p {
   opacity: 0.6;
 }
 
-.projects h2 {
+
+.projects h3 {
   font-size: 2.5rem;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
-.project-grid {
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 
 .project-card {
@@ -101,39 +105,49 @@ p {
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.project-card h3 {
-  margin-bottom: 10px;
+.project-card h4 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.project-card span {
+  font-size: 0.9rem;
+  color: #a1a1a1;
 }
 
 /* ABOUT */
+
 .about {
-  max-width: 800px;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.about h2 {
+.about h3 {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.tools h2 {
+.about p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+.tools h3 {
   font-size: 2.5rem;
   margin-bottom: 30px;
 }
 
-.tool-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.tools ul {
+  list-style: none;
 }
 
-.tool {
-  padding: 12px 24px;
-  background: #141414;
-  border-radius: 30px;
-  font-weight: 500;
+.tools li {
+  margin-bottom: 10px;
 }
 
-.contact h2 {
+
+.contact h3 {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -142,6 +156,7 @@ p {
   margin-bottom: 10px;
 }
 
+
 @media (max-width: 768px) {
   section {
     padding: 60px 6%;
@@ -149,5 +164,9 @@ p {
 
   .hero h1 {
     font-size: 2.5rem;
+  }
+
+  .hero-content {
+    margin-left: 0;
   }
 }
