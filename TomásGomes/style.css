@@ -316,3 +316,37 @@ p {
     padding: 30px;
   }
 }
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 900px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image img {
+  width: 200px; /* Ajusta o tamanho como preferires */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid #a855f7;
+  filter: grayscale(100%); /* Dá um ar mais artístico/profissional */
+  transition: 0.3s;
+}
+
+.about-image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Ajuste para telemóveis */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
