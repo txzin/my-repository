@@ -59,15 +59,29 @@ const closeModal = () => {
 closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 
-const observerOptions = { threshold: 0.15 };
+const observerOptions = { threshold: 0.2 };
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
+      
+      if (entry.target.classList.contains('tools')) {
+        const bars = entry.target.querySelectorAll('.skill-per');
+        bars.forEach(bar => {
+          const targetWidth = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = targetWidth;
+          }, 100);
+        });
+      }
       observer.unobserve(entry.target); 
     }
   });
 }, observerOptions);
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
 document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
