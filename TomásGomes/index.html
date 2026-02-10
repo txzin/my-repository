@@ -35,20 +35,26 @@
       <div class="projects-list">
         <button class="project-item active" 
           data-title="Nocturne Battlegrounds" 
-          data-role="User Experience, Testing & 3D Animation" 
-          data-description="Multiplayer combat game where I focused on interface flow, usability testing and in-game animations.">
+          data-role="User Experience, Aesthetic Planement, Testing & 3D Animation" 
+          data-description="Multiplayer combat game on Roblox where I focused on interface, usability testing and in-game animations."
+          data-image="nocturne.jpg"
+          data-features="User Experience, Game Testing, Game Animations, Usability Testing">
           Nocturne Battlegrounds
         </button>
         <button class="project-item" 
           data-title="Lily's ThriftStore" 
           data-role="UI/UX Design" 
-          data-description="Cozy game project focused on clean UI, readability and intuitive navigation systems.">
+          data-description="Cozy game project focused on clean UI, readability and intuitive navigation."
+          data-image="lily.jpg"
+          data-features="UI/UX, HUD Design/Layout, Color Palette, Icons">
           Lily's ThriftStore
         </button>
         <button class="project-item" 
           data-title="Cyber Engineer" 
           data-role="UI/UX Design" 
-          data-description="Sci-fi themed game where I designed the full interface system, HUD layout and visual hierarchy.">
+          data-description="Sci-fi themed game where I designed the full interface system, HUD layout and visual hierarchy."
+          data-image="cyber.jpg"
+          data-features="Futuristic HUD, Terminal UI, Skill Tree Layout, Interactive Prototypes">
           Cyber Engineer
         </button>
       </div>
@@ -96,7 +102,6 @@
       <h3>Let's work together</h3>
       <p>
         I am currently looking for new opportunities and internships in UI/UX Design. 
-        Whether you have a project in mind or just want to say hi, feel free to reach out!
       </p>
       <div class="contact-links">
         <a href="mailto:tomasjgomes@gmail.com" class="contact-item">Email Me</a>
@@ -110,9 +115,19 @@
   <div class="project-modal" id="projectModal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h4 id="modalTitle"></h4>
-      <p class="modal-role" id="modalRole"></p>
-      <p id="modalDescription"></p>
+      <div class="modal-body">
+        <h4 id="modalTitle"></h4>
+        <p class="modal-role" id="modalRole"></p>
+        <div class="modal-image-container">
+          <img src="" id="modalImage" alt="Preview">
+        </div>
+        <div class="modal-text-details">
+          <h5>The Project</h5>
+          <p id="modalDescription"></p>
+          <h5>Key Contributions</h5>
+          <ul id="modalFeatures"></ul>
+        </div>
+      </div>
     </div>
   </div>
 

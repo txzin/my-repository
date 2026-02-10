@@ -1,7 +1,5 @@
 window.onload = function() {
-  setTimeout(function() {
-    window.scrollTo(0, 0);
-  }, 10);
+  setTimeout(() => window.scrollTo(0, 0), 10);
 };
 
 if ('scrollRestoration' in history) {
@@ -31,27 +29,41 @@ const closeBtn = document.querySelector(".close");
 if (openModalBtn) {
   openModalBtn.addEventListener("click", () => {
     const activeItem = document.querySelector(".project-item.active");
+    
     document.getElementById("modalTitle").textContent = activeItem.dataset.title;
     document.getElementById("modalRole").textContent = activeItem.dataset.role;
     document.getElementById("modalDescription").textContent = activeItem.dataset.description;
+    
+    const modalImg = document.getElementById("modalImage");
+    modalImg.src = activeItem.dataset.image;
+
+    const featuresList = document.getElementById("modalFeatures");
+    featuresList.innerHTML = "";
+    const features = activeItem.dataset.features.split(",");
+    features.forEach(feat => {
+      let li = document.createElement("li");
+      li.textContent = feat.trim();
+      featuresList.appendChild(li);
+    });
+
     modal.classList.add("active");
+    document.body.style.overflow = 'hidden';
   });
 }
 
-closeBtn.addEventListener("click", () => modal.classList.remove("active"));
-window.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("active"); });
-
-const observerOptions = {
-  threshold: 0.15, 
-  rootMargin: "0px 0px -50px 0px" 
+const closeModal = () => {
+  modal.classList.remove("active");
+  document.body.style.overflow = 'auto';
 };
 
+closeBtn.addEventListener("click", closeModal);
+window.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+const observerOptions = { threshold: 0.15 };
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      requestAnimationFrame(() => {
-        entry.target.classList.add("show");
-      });
+      entry.target.classList.add("show");
       observer.unobserve(entry.target); 
     }
   });
@@ -61,8 +73,5 @@ document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
 document.querySelector('.js-scroll-trigger').addEventListener('click', function(e) {
   e.preventDefault();
-  const targetId = this.getAttribute('href');
-  document.querySelector(targetId).scrollIntoView({
-    behavior: 'smooth'
-  });
+  document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
 });
