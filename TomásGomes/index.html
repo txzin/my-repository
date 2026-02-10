@@ -12,7 +12,9 @@
 <body>
 
 <header class="hero">
-  <div class="hero-content">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content fade-seq">
     <h1><span class="accent">Tomás</span> Gomes</h1>
     <h2>UI/UX & Digital Designer</h2>
     <p>
@@ -21,41 +23,56 @@
     </p>
     <a href="#projects" class="btn">View Projects</a>
   </div>
-
-  <div class="blob"></div>
 </header>
 
-<section id="projects" class="projects">
-  <h3>Selected Projects</h3>
+<section id="projects" class="projects hidden">
+  <div class="projects-header">
+    <h3>Selected Projects</h3>
+    <p>Focused on UI, UX and visual clarity</p>
+  </div>
 
-  <div class="projects-grid">
-    <article class="project-card"
-      data-title="Nocturne Battlegrounds"
-      data-role="User Experience, Testing & 3D Animation"
-      data-description="Multiplayer combat game where I worked on usability testing, interface flow improvements and in-game animations.">
-      <h4>Game — Nocturne Battlegrounds</h4>
-      <span>Role: UX, Testing & 3D Animation</span>
-    </article>
+  <div class="projects-layout">
 
-    <article class="project-card"
-      data-title="Lily's ThriftStore"
-      data-role="UI/UX Design"
-      data-description="Cozy game project focused on clean UI, readability and intuitive navigation systems.">
-      <h4>Game — Lily's ThriftStore</h4>
-      <span>Role: UI/UX Design</span>
-    </article>
+    <!-- LEFT -->
+    <div class="projects-list">
+      <button class="project-item active"
+        data-title="Nocturne Battlegrounds"
+        data-role="User Experience, Testing & 3D Animation"
+        data-description="Multiplayer combat game where I focused on interface flow, usability testing and in-game animations.">
+        Nocturne Battlegrounds
+      </button>
 
-    <article class="project-card"
-      data-title="Cyber Engineer"
-      data-role="UI/UX Design"
-      data-description="Sci-fi themed game where I designed the full interface system, HUD layout and visual hierarchy.">
-      <h4>Game — Cyber Engineer</h4>
-      <span>Role: UI/UX Design</span>
-    </article>
+      <button class="project-item"
+        data-title="Lily's ThriftStore"
+        data-role="UI/UX Design"
+        data-description="Cozy game project focused on clean UI, readability and intuitive navigation systems.">
+        Lily's ThriftStore
+      </button>
+
+      <button class="project-item"
+        data-title="Cyber Engineer"
+        data-role="UI/UX Design"
+        data-description="Sci-fi themed game where I designed the full interface system, HUD layout and visual hierarchy.">
+        Cyber Engineer
+      </button>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="project-preview">
+      <h4 id="previewTitle">Nocturne Battlegrounds</h4>
+      <span id="previewRole">User Experience, Testing & 3D Animation</span>
+      <p id="previewDescription">
+        Multiplayer combat game where I focused on interface flow, usability testing and in-game animations.
+      </p>
+
+      <button class="btn open-modal">View Details</button>
+    </div>
+
   </div>
 </section>
 
-<section class="about">
+
+<section class="about hidden">
   <h3>About Me</h3>
   <p>
     I am a Multimedia student with a background in videogame development, where most of my projects involved designing user interfaces, visual systems and interactive experiences.
@@ -64,7 +81,7 @@
   </p>
 </section>
 
-<section class="tools">
+<section class="tools hidden">
   <h3>Tools</h3>
   <ul>
     <li>Figma</li>
@@ -74,7 +91,7 @@
   </ul>
 </section>
 
-<footer class="contact">
+<footer class="contact hidden">
   <h3>Contact</h3>
   <p>Email: tomasjgomes@gmail.com</p>
 </footer>
