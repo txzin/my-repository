@@ -10,19 +10,23 @@
 </head>
 <body>
 
-  <div class="hero-bg">
-    <div class="blob"></div>
-  </div>
+  <div class="hero-bg"></div>
 
   <header class="hero">
-    <div class="hero-content fade-seq">
-      <h1><span class="accent">Tomás</span> Gomes</h1>
-      <h2>UI/UX & Digital Design</h2>
-      <p>
-        I design visually clear and coherent digital experiences, with a strong
-        focus on aesthetics, color, and composition.
-      </p>
-      <a href="#projects" class="btn js-scroll-trigger">View Projects</a>
+    <div class="hero-container">
+      <div class="hero-content fade-seq">
+        <h1><span class="accent">Tomás</span> Gomes</h1>
+        <h2>UI/UX & Digital Designer</h2>
+        <p>I design visually clear and coherent digital experiences, with a focus on aesthetics and composition.</p>
+        <a href="#projects" class="btn js-scroll-trigger">View Projects</a>
+      </div>
+      
+      <div class="hero-visual fade-seq">
+        <div class="visual-card">
+          <div class="glow"></div>
+          <img src="eu.jpg" alt="Featured Design" class="floating-img">
+        </div>
+      </div>
     </div>
   </header>
 
@@ -32,52 +36,48 @@
       <p>Focused on UI, UX and visual coherence</p>
     </div>
 
-    <div class="projects-layout">
-      <div class="projects-list">
-        <button class="project-item active" 
-          data-title="Nocturne Battlegrounds" 
-          data-role="User Experience, Aesthetic Planning, Testing & 3D Animation" 
-          data-description="Multiplayer combat game on Roblox where I focused on interface, usability testing and in-game animations."
-          data-image="nocturne.jpg"
-          data-features="User Experience, Game Testing, Game Animations, Usability Testing">
-          Nocturne Battlegrounds
-        </button>
-        <button class="project-item" 
-          data-title="Lily's ThriftStore" 
-          data-role="UI/UX Design" 
-          data-description="Cozy clothing store game project focused on clean UI, readability and intuitive navigation."
-          data-image="lily.jpg"
-          data-features="UI/UX, HUD Design/Layout, Color Palette, Icons">
-          Lily's ThriftStore
-        </button>
-        <button class="project-item" 
-          data-title="Cyber Engineer" 
-          data-role="UI/UX Design" 
-          data-description="Sci-fi themed game where I designed the full interface system, HUD layout and visual hierarchy."
-          data-image="cyber.jpg"
-          data-features="UI/UX, Futuristic HUD, Skill Effects">
-          Cyber Engineer
-        </button>
-      </div>
+<div class="projects-layout">
+  <div class="projects-list">
+    <button class="project-item active" 
+      data-title="Nocturne Battlegrounds" 
+      data-role="UX Architecture, 3D Animation & Game Testing" 
+      data-description="Multiplayer combat game on Roblox. Defined the interface hierarchy, user flow, and overall UX strategy."
+      data-link="nocturne.html">
+      Nocturne Battlegrounds
+    </button>
+    <button class="project-item" 
+      data-title="Lily's ThriftStore" 
+      data-role="UI/UX Design & Branding" 
+      data-description="Cozy store project focused on clean UI, readability and intuitive navigation."
+      data-link="lily.html">
+      Lily's ThriftStore
+    </button>
+    <button class="project-item" 
+      data-title="Cyber Engineer" 
+      data-role="UI/UX Design & HUD Systems" 
+      data-description="Sci-fi themed interface system and HUD visual hierarchy."
+      data-link="cyber.html">
+      Cyber Engineer
+    </button>
+  </div>
 
-      <div class="project-preview">
-        <h4 id="previewTitle">Nocturne Battlegrounds</h4>
-        <span id="previewRole">User Experience, Testing & 3D Animation</span>
-        <p id="previewDescription">
-          Multiplayer combat game where I focused on interface flow, usability testing and in-game animations.
-        </p>
-        <button class="btn open-modal">View Details</button>
-      </div>
-    </div>
-  </section>
+  <div class="project-preview">
+    <h4 id="previewTitle">Nocturne Battlegrounds</h4>
+    <span id="previewRole">UX Architecture, Strategic Planning & 3D Animation</span>
+    <p id="previewDescription">
+      Multiplayer combat game on Roblox. Defined the interface hierarchy, user flow, and overall UX strategy.
+    </p>
+    <a href="nocturne.html" id="projectLink" class="btn">View Case Study</a>
+  </div>
+</div>
 
   <section class="about hidden">
     <div class="about-container">
       <div class="about-text">
         <h3>About Me</h3>
         <p>
-          Multimedia student specializing in UI/UX for Games and Digital Products. 
-          I bridge the gap between complex systems and intuitive visual design. 
+          Video Games & Multimedia student specializing in UI/UX for Games and Digital Products. 
+          I look forward to bridge the gap between complex systems and intuitive visual design. 
           While my roots are in game dev, I’m focused on creating seamless 
           experiences for web and mobile platforms.
         </p>
@@ -88,39 +88,31 @@
     </div>
   </section>
 
-<section class="tools hidden">
-  <h3>Tools & Skills</h3>
-  <div class="tools-grid">
-    <div class="tool-card">
-      <i class="fa-brands fa-figma"></i>
-      <h4>Figma</h4>
-      <div class="skill-bar">
-        <div class="skill-per" style="width: 90%;"></div>
+  <section class="tools hidden">
+    <h3>Tools & Skills</h3>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <i class="fa-brands fa-figma"></i>
+        <h4>Figma</h4>
+        <div class="skill-bar"><div class="skill-per" style="width: 90%;"></div></div>
+      </div>
+      <div class="tool-card">
+        <i class="fa-solid fa-pen-nib"></i>
+        <h4>Illustrator</h4>
+        <div class="skill-bar"><div class="skill-per" style="width: 80%;"></div></div>
+      </div>
+      <div class="tool-card">
+        <i class="fa-solid fa-image"></i>
+        <h4>Photoshop</h4>
+        <div class="skill-bar"><div class="skill-per" style="width: 75%;"></div></div>
+      </div>
+      <div class="tool-card">
+        <i class="fa-solid fa-film"></i>
+        <h4>After Effects</h4>
+        <div class="skill-bar"><div class="skill-per" style="width: 55%;"></div></div>
       </div>
     </div>
-    <div class="tool-card">
-      <i class="fa-solid fa-pen-nib"></i>
-      <h4>Illustrator</h4>
-      <div class="skill-bar">
-        <div class="skill-per" style="width: 80%;"></div>
-      </div>
-    </div>
-    <div class="tool-card">
-      <i class="fa-solid fa-image"></i>
-      <h4>Photoshop</h4>
-      <div class="skill-bar">
-        <div class="skill-per" style="width: 75%;"></div>
-      </div>
-    </div>
-    <div class="tool-card">
-      <i class="fa-solid fa-film"></i>
-      <h4>After Effects</h4>
-      <div class="skill-bar">
-        <div class="skill-per" style="width: 55%;"></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <footer class="contact hidden">
     <div class="contact-content">
@@ -134,7 +126,7 @@
         <a href="https://www.linkedin.com/in/tom%C3%A1s-gomes-089ba425a/" target="_blank" class="contact-item" title="LinkedIn">
           <i class="fa-brands fa-linkedin"></i>
         </a>
-        <a href="https://github.com/txzin?tab=overview&from=2026-01-01&to=2026-01-31" target="_blank" class="contact-item" title="GitHub">
+        <a href="https://github.com/txzin" target="_blank" class="contact-item" title="GitHub">
           <i class="fa-brands fa-github"></i>
         </a>
       </div>
@@ -142,25 +134,6 @@
       <p class="copyright">© 2026 Tomás Gomes. Designed & Coded by me.</p>
     </div>
   </footer>
-
-  <div class="project-modal" id="projectModal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="modal-body">
-        <h4 id="modalTitle"></h4>
-        <p class="modal-role" id="modalRole"></p>
-        <div class="modal-image-container">
-          <img src="" id="modalImage" alt="Preview">
-        </div>
-        <div class="modal-text-details">
-          <h5>The Project</h5>
-          <p id="modalDescription"></p>
-          <h5>Key Contributions</h5>
-          <ul id="modalFeatures"></ul>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

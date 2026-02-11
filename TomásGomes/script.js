@@ -1,91 +1,73 @@
-window.onload = function() {
-  setTimeout(() => window.scrollTo(0, 0), 10);
-};
-
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
+// 1. Bloquear o scroll automático do browser
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
 }
 
-const projectItems = document.querySelectorAll(".project-item");
-const previewTitle = document.getElementById("previewTitle");
-const previewRole = document.getElementById("previewRole");
-const previewDescription = document.getElementById("previewDescription");
-
-projectItems.forEach(item => {
-  item.addEventListener("click", () => {
-    projectItems.forEach(btn => btn.classList.remove("active"));
-    item.classList.add("active");
-
-    previewTitle.textContent = item.dataset.title;
-    previewRole.textContent = item.dataset.role;
-    previewDescription.textContent = item.dataset.description;
-  });
+// 2. Forçar o topo ao carregar e remover foco de botões
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+    if (document.activeElement) {
+        document.activeElement.blur();
+    }
 });
 
-const modal = document.getElementById("projectModal");
-const openModalBtn = document.querySelector(".open-modal");
-const closeBtn = document.querySelector(".close");
-
-if (openModalBtn) {
-  openModalBtn.addEventListener("click", () => {
-    const activeItem = document.querySelector(".project-item.active");
-    
-    document.getElementById("modalTitle").textContent = activeItem.dataset.title;
-    document.getElementById("modalRole").textContent = activeItem.dataset.role;
-    document.getElementById("modalDescription").textContent = activeItem.dataset.description;
-    
-    const modalImg = document.getElementById("modalImage");
-    modalImg.src = activeItem.dataset.image;
-
-    const featuresList = document.getElementById("modalFeatures");
-    featuresList.innerHTML = "";
-    const features = activeItem.dataset.features.split(",");
-    features.forEach(feat => {
-      let li = document.createElement("li");
-      li.textContent = feat.trim();
-      featuresList.appendChild(li);
-    });
-
-    modal.classList.add("active");
-    document.body.style.overflow = 'hidden';
-  });
-}
-
-const closeModal = () => {
-  modal.classList.remove("active");
-  document.body.style.overflow = 'auto';
-};
-
-closeBtn.addEventListener("click", closeModal);
-window.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-
-const observerOptions = { threshold: 0.2 };
-
+// 3. Intersection Observer (Animações)
+const observerOptions = { threshold: 0.15 };
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      
-      if (entry.target.classList.contains('tools')) {
-        const bars = entry.target.querySelectorAll('.skill-per');
-        bars.forEach(bar => {
-          const targetWidth = bar.style.width;
-          bar.style.width = '0';
-          setTimeout(() => {
-            bar.style.width = targetWidth;
-          }, 100);
-        });
-      }
-      observer.unobserve(entry.target); 
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            
+            if (entry.target.classList.contains('tools')) {
+                const bars = entry.target.querySelectorAll('.skill-per');
+                bars.forEach(bar => {
+                    const style = bar.getAttribute('style');
+                    const width = style.match(/width:\s*(\d+%)/)[1];
+                    bar.style.width = '0';
+                    setTimeout(() => { bar.style.width = width; }, 200);
+                });
+            }
+        }
+    });
 }, observerOptions);
 
 document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+// 4. Project Switcher (Sem disparar foco)
+const projectItems = document.querySelectorAll(".project-item");
+const previewTitle = document.getElementById("previewTitle");
+const previewRole = document.getElementById("previewRole");
+const previewDescription = document.getElementById("previewDescription");
+const projectLink = document.getElementById("projectLink");
 
-document.querySelector('.js-scroll-trigger').addEventListener('click', function(e) {
-  e.preventDefault();
-  document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+projectItems.forEach(item => {
+    item.addEventListener("click", (e) => {
+        // Impede que o botão segure o foco visual
+        e.currentTarget.blur();
+        
+        projectItems.forEach(btn => btn.classList.remove("active"));
+        item.classList.add("active");
+
+        [previewTitle, previewRole, previewDescription].forEach(el => el.style.opacity = 0);
+        
+        setTimeout(() => {
+            previewTitle.textContent = item.dataset.title;
+            previewRole.textContent = item.dataset.role;
+            previewDescription.textContent = item.dataset.description;
+            projectLink.href = item.dataset.link;
+            [previewTitle, previewRole, previewDescription].forEach(el => el.style.opacity = 1);
+        }, 200);
+    });
+});
+
+// 5. Smooth Scroll corrigido
+document.querySelectorAll('.js-scroll-trigger').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });

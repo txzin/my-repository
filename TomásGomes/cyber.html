@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Engineer | Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-page { padding-top: 120px; padding-bottom: 100px; }
+    
+    .project-logo {
+      display: block;
+      margin: 0 auto 60px;
+      max-width: 500px;
+      width: 90%;
+      height: auto;
+      filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.2)); /* Brilho ciano para o tema Cyber */
+    }
+
+    .project-header-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #222;
+      margin-bottom: 80px;
+    }
+
+    .info-item h5 { color: #a855f7; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; }
+    .info-item p { color: #fff; font-size: 0.95rem; font-weight: 500; }
+
+    .content-section { max-width: 900px; margin: 0 auto 80px; }
+    .content-section h3 { font-size: 2rem; color: #a855f7; margin-bottom: 20px; }
+    .content-section p { font-size: 1.1rem; line-height: 1.8; color: #cfcfcf; }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .showcase-img {
+      width: 100%;
+      border-radius: 15px;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .showcase-img:hover { border-color: #a855f7; transform: scale(1.02); }
+
+    .back-link {
+      position: absolute; top: 40px; left: 10%;
+      color: #fff; text-decoration: none; font-weight: 600;
+      display: flex; align-items: center; gap: 10px; transition: 0.3s;
+    }
+    .back-link:hover { color: #a855f7; transform: translateX(-5px); }
+
+    @media (max-width: 768px) { 
+      .back-link { position: relative; top: 0; left: 0; margin-bottom: 40px; }
+      .showcase-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-bg"></div>
+
+  <main class="project-page container" style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+    <a href="index.html" class="back-link">
+      <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+    </a>
+
+    <section class="project-hero">
+      <div class="fade-seq">
+        <img src="engineer.png" alt="Cyber Engineer Logo" class="project-logo">
+        
+        <div class="project-header-info">
+          <div class="info-item">
+            <h5>Project Type</h5>
+            <p>Sci-Fi HUD System</p>
+          </div>
+          <div class="info-item">
+            <h5>My Role</h5>
+            <p>UI/UX Design & VFX</p>
+          </div>
+          <div class="info-item">
+            <h5>Tools</h5>
+            <p>Figma, Illustrator</p>
+          </div>
+          <div class="info-item">
+            <h5>Focus</h5>
+            <p>Visual Hierarchy</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section fade-seq">
+        <h3>The Concept</h3>
+        <p>
+          Cyber Engineer is a project focused on the intersection of different info visualization and futuristic aesthetics. 
+          The goal was to design a Heads-Up Display (HUD) that feels advanced and "high-tech" while maintaining 
+          absolute clarity for the user.
+        </p>
+      </div>
+
+      <div class="showcase-grid">
+        <img src="cyber-preview-1.jpg" alt="HUD Detail" class="showcase-img">
+        <img src="cyber-preview-2.jpg" alt="Menu System" class="showcase-img">
+      </div>
+
+      <div class="content-section">
+        <h3>Information Architecture</h3>
+        <p>
+          Designing for a Sci-Fi setting often leads to "visual noise". My approach here was to use 
+          <strong>color coding</strong> and <strong>dynamic scaling</strong> to ensure that critical alerts 
+          stand out from secondary environmental data. Every line and geometric shape serves a functional 
+          purpose in the user's workflow.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact">
+    <p class="copyright">© 2026 Tomás Gomes. Cyber UI Case Study.</p>
+  </footer>
+
+</body>
+</html>
