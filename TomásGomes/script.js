@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Glow effect
+    // Glow effect no fundo acompanhando o rato
     const glow = document.getElementById('mouse-glow');
     document.addEventListener('mousemove', (e) => {
         glow.style.left = e.clientX + 'px';
         glow.style.top = e.clientY + 'px';
     });
 
-    // Swiper Carousel
+    // Swiper Carousel com efeito dinâmico
     const swiper = new Swiper(".mySwiper", {
         slidesPerView: "auto",
         centeredSlides: true,
-        spaceBetween: 50,
+        spaceBetween: 80, // Espaço aumentado para o efeito de flutuar não colidir
         grabCursor: true,
         loop: true,
+        speed: 800,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // Fade on scroll
+    // Fade in on scroll (Intersection Observer)
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
-    // Smooth scroll
+    // Smooth scroll para âncoras internas
     document.querySelectorAll('.js-scroll-trigger').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
