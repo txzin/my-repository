@@ -45,9 +45,15 @@
     .content-section p { font-size: 1.1rem; line-height: 1.8; color: #cfcfcf; }
 
     .back-link {
-      position: absolute; top: 40px; left: 10%;
-      color: #fff; text-decoration: none; font-weight: 600;
-      display: flex; align-items: center; gap: 10px; transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      margin-bottom: 40px;
+      margin-top: 60px;
     }
     .back-link:hover { color: #a855f7; transform: translateX(-5px); }
 
@@ -62,7 +68,7 @@
       margin-top: 10px;
     }
 
-    @media (max-width: 768px) { .back-link { position: relative; top: 0; left: 0; margin-bottom: 40px; } }
+    @media (max-width: 768px) { .back-link { margin-bottom: 40px; } }
   </style>
 </head>
 <body>
@@ -125,7 +131,9 @@
   </main>
 
   <footer class="contact">
-    <p class="copyright">© 2026 Tomás Gomes. Designed & Planned by me.</p>
+    <div class="container">
+      <p class="copyright">© 2026 Tomás Gomes. Designed & Planned by me.</p>
+    </div>
   </footer>
 
 </body>

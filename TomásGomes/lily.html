@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyber Engineer | Case Study</title>
+  <title>Lily's ThriftStore | Case Study</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
@@ -12,11 +12,10 @@
     
     .project-logo {
       display: block;
-      margin: 0 auto 60px;
-      max-width: 500px;
-      width: 90%;
+      margin: 0 auto 40px;
+      max-width: 400px;
+      width: 80%;
       height: auto;
-      filter: drop-shadow(0 0 25px rgba(0, 255, 255, 0.2));
     }
 
     .project-header-info {
@@ -37,23 +36,31 @@
     .content-section h3 { font-size: 2rem; color: #a855f7; margin-bottom: 20px; }
     .content-section p { font-size: 1.1rem; line-height: 1.8; color: #cfcfcf; }
 
-    .showcase-grid {
+    .image-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-      margin: 40px 0;
+      margin-bottom: 60px;
     }
 
-    .showcase-img {
+    .image-grid img {
       width: 100%;
       border-radius: 15px;
       border: 1px solid #333;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
-    .showcase-img:hover { border-color: #a855f7; transform: scale(1.02); }
+    .image-grid img:hover { transform: scale(1.02); border-color: #a855f7; }
 
-.back-link {
+    .palette-img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 20px;
+    }
+
+    .back-link {
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -66,10 +73,7 @@
     }
     .back-link:hover { color: #a855f7; transform: translateX(-5px); }
 
-    @media (max-width: 768px) { 
-      .back-link { margin-bottom: 40px; }
-      .showcase-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 768px) { .back-link { margin-bottom: 40px; } }
   </style>
 </head>
 <body>
@@ -83,55 +87,69 @@
 
     <section class="project-hero">
       <div class="fade-seq">
-        <img src="engineer.png" alt="Cyber Engineer Logo" class="project-logo">
+        <h1 style="text-align: center; margin-bottom: 10px;">Lily's <span class="accent">ThriftStore</span></h1>
+        <p style="text-align: center; margin-bottom: 40px;">End-to-end UI/UX Design for a cozy shopping experience.</p>
         
         <div class="project-header-info">
           <div class="info-item">
-            <h5>Project Type</h5>
-            <p>Sci-Fi HUD System</p>
+            <h5>Engine</h5>
+            <p>Unreal Engine</p>
           </div>
           <div class="info-item">
-            <h5>My Role</h5>
-            <p>UI/UX Design & VFX</p>
+            <h5>Role</h5>
+            <p>UI/UX Designer</p>
           </div>
           <div class="info-item">
             <h5>Tools</h5>
-            <p>Figma, Illustrator</p>
+            <p>Illustrator, Figma & Photoshop</p>
           </div>
           <div class="info-item">
-            <h5>Focus</h5>
-            <p>Visual Hierarchy</p>
+            <h5>Timeline</h5>
+            <p>8-9 Months</p>
           </div>
         </div>
       </div>
 
-      <div class="content-section fade-seq">
-        <h3>The Concept</h3>
+      <div class="content-section">
+        <h3>Moodboard & Aesthetics</h3>
         <p>
-          Cyber Engineer is a game project where the intersection of different info visualization and futuristic aesthetics had to work well together, since the game is designed for long duration rounds. 
-          The goal was to design a Heads-Up Display (HUD) that feels advanced and "high-tech" while maintaining 
-          absolute clarity for the user.
+          The project started with a deep dive into the "cozy" and "pastel" aesthetic. I collected references from games like Animal Crossing to define a soft, welcoming visual language that aligns with the thrift store theme.
         </p>
-      </div>
-
-      <div class="showcase-grid">
-        <img src="CyberEngineer (4).gif" alt="HUD Detail" class="showcase-img">
-        <img src="CyberEngineer (7).gif" alt="Menu System" class="showcase-img">
+        <div class="image-grid">
+          <img src="MoodBoard.jpg" alt="Moodboard">
+        </div>
       </div>
 
       <div class="content-section">
-        <h3>Challenge</h3>
+        <h3>Initial Sketches & Planning</h3>
         <p>
-          Designing for a Sci-Fi setting often leads to "visual noise". My approach here was to use 
-          <strong>the right colors</strong> and <strong>dynamic scaling</strong> to ensure that the right information had the user's attention.
+          Before jumping into Figma, I sketched the layouts to plan the Information Architecture. This allowed me to define where each element (navigation, inventory, currency) would live to ensure an intuitive user flow.
         </p>
+        <div class="image-grid">
+          <img src="UI_Planning.png" alt="Low-fi Sketch 1">
+        </div>
+      </div>
+
+      <div class="content-section" style="text-align: center;">
+        <h3>Color Palette</h3>
+        <img src="ColorPalette.png" alt="Color Palette" class="palette-img">
+      </div>
+
+      <div class="content-section">
+        <h3>Final UI Elements</h3>
+        <p>
+          The final elements were designed in Figma, using the established palette. I focused on rounded corners, soft shadows, and high contrast for readability, ensuring a playful yet professional look.
+        </p>
+        <div class="image-grid">
+          <img src="UI_Lily.png" alt="Final Figma UI">
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="contact">
     <div class="container">
-      <p class="copyright">© 2026 Tomás Gomes. Cyber Engineer UI.</p>
+      <p class="copyright">© 2026 Tomás Gomes. Case Study: Lily's ThriftStore.</p>
     </div>
   </footer>
 
