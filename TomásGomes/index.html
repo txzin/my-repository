@@ -6,9 +6,12 @@
     <title>Tomás Gomes | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div id="mouse-glow"></div>
 
   <nav class="navbar">
     <div class="nav-container container">
@@ -51,25 +54,39 @@
         <h3>Selected<br>Projects</h3>
         <p>Focused on UI, UX and visual coherence</p>
       </div>
-      <div class="projects-grid">
-        <a href="nocturne.html" class="project-card">
-          <span class="card-role">UX Architecture</span>
-          <h4 class="card-title">Nocturne Battlegrounds</h4>
-          <p class="card-description">Interface hierarchy and UX strategy for Roblox combat game.</p>
-          <span class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a href="lily.html" class="project-card">
-          <span class="card-role">UI/UX & Branding</span>
-          <h4 class="card-title">Lily's ThriftStore</h4>
-          <p class="card-description">Cozy store project focused on clean UI and intuitive navigation.</p>
-          <span class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a href="cyber.html" class="project-card">
-          <span class="card-role">UI/UX & HUD</span>
-          <h4 class="card-title">Cyber Engineer</h4>
-          <p class="card-description">Sci-fi themed interface system and HUD visual hierarchy.</p>
-          <span class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
+
+      <div class="swiper-wrapper-relative">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="nocturne.html" class="project-card">
+                <span class="card-role">UX Architecture</span>
+                <h4 class="card-title">Nocturne Battlegrounds</h4>
+                <p class="card-description">Interface hierarchy and UX strategy for Roblox combat game.</p>
+                <span class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="lily.html" class="project-card">
+                <span class="card-role">UI/UX & Branding</span>
+                <h4 class="card-title">Lily's ThriftStore</h4>
+                <p class="card-description">Cozy store project focused on clean UI and intuitive navigation.</p>
+                <span class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="cyber.html" class="project-card">
+                <span class="card-role">UI/UX & HUD</span>
+                <h4 class="card-title">Cyber Engineer</h4>
+                <p class="card-description">Sci-fi themed interface system and HUD visual hierarchy.</p>
+                <span class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -79,13 +96,11 @@
       <div class="about-container">
         <div class="about-text">
           <h3>About Me</h3>
-          <div class="about-text">
           <p>
             I am a Multimedia student specializing in <span class="accent">UI/UX for Games</span> and Digital Products. 
             <br><br>
-            While my current portfolio is heavily inspired by the gaming industry, I am <span class="accent">fully open to exploring new challenges</span>. Whether it's web platforms, mobile apps, or brand identity, I'm willing to apply my technical skills and "game-feel" logic to create <span class="accent">g digital experiences</span> in any field.
+            While my current portfolio is heavily inspired by the gaming industry, I am <span class="accent">fully open to exploring new challenges</span>. Whether it's web platforms, mobile apps, or brand identity, I'm willing to apply my technical skills and "game-feel" logic to create <span class="accent">memorable digital experiences</span> in any field.
           </p>
-        </div>
         </div>
         <div class="about-image">
           <img src="eu.jpg" alt="Tomás Gomes">
@@ -138,6 +153,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

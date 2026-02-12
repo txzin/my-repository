@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Glow effect
+    const glow = document.getElementById('mouse-glow');
+    document.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+    });
+
+    // Swiper Carousel
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 50,
+        grabCursor: true,
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    // Fade on scroll
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -9,19 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
+    // Smooth scroll
     document.querySelectorAll('.js-scroll-trigger').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-
             if (targetId.startsWith('#')) {
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
-                    const navHeight = 80;
-                    const targetPosition = targetSection.offsetTop - navHeight;
-
                     window.scrollTo({
-                        top: targetPosition,
+                        top: targetSection.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
