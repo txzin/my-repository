@@ -4,137 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nocturne Battlegrounds | Case Study</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    .project-page { padding-top: 120px; padding-bottom: 100px; }
+    .project-page { padding-top: 140px; padding-bottom: 100px; position: relative; z-index: 2; }
     
-    .project-logo {
-      display: block;
-      margin: 0 auto 60px;
-      max-width: 450px;
-      width: 90%;
-      height: auto;
-      filter: drop-shadow(0 10px 30px rgba(168, 85, 247, 0.2));
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: #a1a1aa; text-decoration: none; font-weight: 600;
+      margin-bottom: 40px; transition: 0.3s;
+      padding: 10px 20px; border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);
     }
+    .back-btn:hover { color: #fff; border-color: #a855f7; background: rgba(168, 85, 247, 0.1); }
 
-    .project-showcase-img {
-      width: 100%;
-      border-radius: 24px;
-      border: 1px solid #333;
-      margin: 40px 0;
+    .project-logo-container { text-align: center; margin-bottom: 60px; }
+    .project-logo { max-width: 450px; width: 100%; height: auto; filter: drop-shadow(0 10px 40px rgba(168, 85, 247, 0.25)); }
+
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px; margin-bottom: 100px;
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px; border-radius: 30px;
     }
-
-    .project-header-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      background: rgba(255, 255, 255, 0.02);
-      padding: 30px;
-      border-radius: 20px;
-      border: 1px solid #222;
-      margin-bottom: 80px;
-    }
-
-    .info-item h5 { color: #a855f7; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; }
-    .info-item p { color: #fff; font-size: 0.95rem; font-weight: 500; }
-
-    .content-section { max-width: 900px; margin: 0 auto 80px; }
-    .content-section h3 { font-size: 2rem; color: #a855f7; margin-bottom: 20px; }
-    .content-section p { font-size: 1.1rem; line-height: 1.8; color: #cfcfcf; }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-      margin-bottom: 40px;
-      margin-top: 60px;
-    }
-    .back-link:hover { color: #a855f7; transform: translateX(-5px); }
-
+    .info-item h5 { color: #a855f7; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.05em; }
+    .info-item p { color: #fff; font-size: 1.1rem; font-weight: 500; }
     .role-tag {
-      display: inline-block;
-      padding: 4px 12px;
-      background: rgba(168, 85, 247, 0.15);
-      border: 1px solid #a855f7;
-      border-radius: 6px;
-      color: #b98cff;
-      font-size: 0.8rem;
-      margin-top: 10px;
+      display: inline-block; padding: 4px 10px; background: rgba(168, 85, 247, 0.2);
+      border: 1px solid #a855f7; border-radius: 6px; color: #d8b4fe; font-size: 0.75rem; font-weight: 600;
+      margin-top: 8px; text-transform: uppercase;
     }
 
-    @media (max-width: 768px) { .back-link { margin-bottom: 40px; } }
+    .content-block { max-width: 800px; margin: 0 auto 100px; }
+    .content-block h3 { font-size: 2rem; color: #fff; margin-bottom: 20px; font-weight: 700; }
+    .content-block p { font-size: 1.15rem; line-height: 1.7; color: #d4d4d8; margin-bottom: 20px; }
+
+    .note-box {
+      border-left: 4px solid #a855f7; background: linear-gradient(90deg, rgba(168, 85, 247, 0.05) 0%, transparent 100%);
+      padding: 20px 25px; border-radius: 0 10px 10px 0; margin-top: 30px;
+      font-style: italic; color: #a1a1aa;
+    }
+
+    .full-width-img {
+      width: 100%; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 40px 0 80px 0; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
   </style>
 </head>
 <body>
 
-  <div class="hero-bg"></div>
+  <div id="mouse-glow"></div>
 
-  <main class="project-page container" style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
-    <a href="index.html" class="back-link">
-      <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
-    </a>
+  <nav class="navbar">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">Tomás<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section class="project-hero">
-      <div class="fade-seq">
+  <main class="project-page container">
+    <a href="index.html#projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+
+    <header class="fade-seq">
+      <div class="project-logo-container">
         <img src="NB.png" alt="Nocturne Logo" class="project-logo">
-        
-        <div class="project-header-info">
-          <div class="info-item">
-            <h5>Engine</h5>
-            <p>Roblox (Lua)</p>
-          </div>
-          <div class="info-item">
-            <h5>My Role</h5>
-            <p>UX Planning & UI Architecture</p>
-            <span class="role-tag">Strategic Design</span>
-          </div>
-          <div class="info-item">
-            <h5>Tools</h5>
-            <p>Figma, Blender, After Effects</p>
-          </div>
-          <div class="info-item">
-            <h5>Timeline</h5>
-            <p>9 Months</p>
-          </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <h5>Engine</h5> <p>Roblox (Lua)</p>
+        </div>
+        <div class="info-item">
+          <h5>My Role</h5> <p>UX Planning & Architecture</p>
+          <span class="role-tag">Strategic Design</span>
+        </div>
+        <div class="info-item">
+          <h5>Tools</h5> <p>Figma, Blender, AE</p>
+        </div>
+        <div class="info-item">
+          <h5>Timeline</h5> <p>9 Months</p>
         </div>
       </div>
+    </header>
 
-      <div class="content-section fade-seq">
-        <h3>The Mission</h3>
-        <p>
-          The main objective was to architect a user interface that remained unobtrusive during intense combat while 
-          providing vital information such as health, stamina, and ability cooldown instantly and clearly. 
-        </p>
-        <p style="margin-top: 15px; font-style: italic; border-left: 3px solid #a855f7; padding-left: 15px;">
-          Note: In this project, I acted as the UI/UX Architect. While the final visual assets were produced by a 
-          dedicated artist, I was responsible for the strategic placement, visual hierarchy, and the overall 
-          functionality of every element not only in the HUD, but also in the game menus.
-        </p>
-      </div>
-
-      <img src="nocturne-gameplay.jpg" alt="HUD in action" class="project-showcase-img">
-
-      <div class="content-section">
-        <h3>User Experience Strategy</h3>
-        <p>
-          To ensure player focus, I implemented a minimal HUD approach where high-priority bars are centered but 
-          transparent enough to not block the player's sight. Secondary menus were designed to be clear, allowing the user to easily use it.
-        </p>
+    <section class="content-block fade-seq">
+      <h3>The Mission</h3>
+      <p>The main objective was to architect a user interface that remained unobtrusive during intense combat while providing vital information such as health, stamina, and ability cooldown instantly and clearly.</p>
+      
+      <div class="note-box">
+        <strong>Note:</strong> In this project, I acted as the UI/UX Architect. While the final visual assets were produced by a dedicated artist, I was responsible for the strategic placement, visual hierarchy, and the overall functionality of every element not only in the HUD, but also in the game menus.
       </div>
     </section>
+
+    <div class="container">
+      <img src="nocturne-gameplay.jpg" alt="Nocturne Gameplay HUD" class="full-width-img">
+    </div>
+
+    <section class="content-block">
+      <h3>User Experience Strategy</h3>
+      <p>To ensure player focus, I implemented a minimal HUD approach where high-priority bars are centered but transparent enough to not block the player's sight. Secondary menus were designed to be clear, allowing the user to easily navigate without friction.</p>
+    </section>
+
   </main>
 
-  <footer class="contact">
+  <footer id="contact" class="contact-section">
     <div class="container">
-      <p class="copyright">© 2026 Tomás Gomes. Designed & Planned by me.</p>
+      <div class="contact-content">
+        <div class="contact-links">
+          <a href="mailto:tomasjgomes@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://linkedin.com/in/tomás-gomes" target="_blank" class="contact-item"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p class="copyright">© 2026 Tomás Gomes. Designed & Planned by me.</p>
+      </div>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
