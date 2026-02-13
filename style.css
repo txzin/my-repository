@@ -165,6 +165,38 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.03em; }
 .contact-item:hover { transform: translateY(-10px) scale(1.1); background: #a855f7; color: #fff; }
 footer { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 80px; }
 .copyright { opacity: 0.4; font-size: 1rem; margin-top: 20px; }
+.cv-download-wrapper {
+  margin: 30px 0 50px 0;
+}
+
+.btn-cv {
+  background: transparent;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #a855f7;
+  padding: 15px 35px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-cv i {
+  font-size: 1.1rem;
+}
+
+.btn-cv:hover {
+  background: #a855f7;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
+  border-color: #a855f7;
+}
+
+/* Garante que os links de contacto ficam bem por baixo */
+.contact-links {
+  margin-top: 20px;
+}
 
 /* UTILS */
 .hidden { opacity: 0; transform: translateY(60px); transition: 1s cubic-bezier(0.2, 1, 0.3, 1); }
