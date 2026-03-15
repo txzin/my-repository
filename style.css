@@ -79,13 +79,12 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.03em; }
   pointer-events: none;
 }
 
-/* Estado Ativo com Animação de Flutuar */
 .swiper-slide-active { 
   opacity: 1; 
   transform: scale(1.05); 
   filter: blur(0);
   pointer-events: auto;
-  animation: projectFloat 4s infinite ease-in-out; /* O EFEITO DE FLUTUAR */
+  animation: projectFloat 4s infinite ease-in-out;
 }
 
 @keyframes projectFloat {
@@ -147,14 +146,50 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.03em; }
 .about-image { flex: 0.8; display: flex; justify-content: center; }
 .about-image img { width: 100%; max-width: 450px; aspect-ratio: 1/1; border-radius: 40px; object-fit: cover; border: 2px solid rgba(168, 85, 247, 0.3); box-shadow: 0 0 60px rgba(168, 85, 247, 0.15); }
 
-/* TOOLS GRID */
+/* TOOLS SECTION DINÂMICA */
 .tools-section { background: #080808; padding: 160px 0; position: relative; }
 .tools-header h3 { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 20px; font-weight: 700; }
-.tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-.tool-card { background: #121212; padding: 50px 30px; border-radius: 30px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; }
-.tool-card:hover { border-color: #a855f7; transform: translateY(-5px); }
-.tool-card i { font-size: 4rem; color: #a855f7; margin-bottom: 25px; }
-.tool-card h4 { font-size: 1.5rem; margin-bottom: 10px; }
+
+.tools-grid { 
+  display: grid; 
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 25px; 
+  padding: 60px 0; /* Espaço para a expansão não cortar */
+}
+
+.tool-card { 
+  background: #121212; 
+  padding: 45px 20px; 
+  border-radius: 35px; 
+  text-align: center; 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.tool-card i { font-size: 3.5rem; color: #a855f7; margin-bottom: 20px; transition: 0.3s; }
+.tool-card h4 { font-size: 1.3rem; margin-bottom: 8px; }
+.tool-tag { font-size: 0.8rem; color: #a1a1aa; display: block; margin-top: 5px; }
+
+/* EFEITO DE EXPANSÃO AO PASSAR RATO */
+.tool-card:hover { 
+  border-color: #a855f7; 
+  transform: scale(1.2); /* Expansão dinâmica */
+  z-index: 10; 
+  background: #161616;
+  box-shadow: 0 30px 60px rgba(168, 85, 247, 0.25);
+}
+
+.tool-card:hover i { transform: scale(1.1); color: #b98cff; }
+
+/* FOCO: Suaviza os vizinhos quando um está em destaque */
+.tools-grid:has(.tool-card:hover) .tool-card:not(:hover) {
+  opacity: 0.4;
+  filter: blur(3px);
+  transform: scale(0.9);
+}
 
 /* CONTACT & FOOTER */
 .contact-section { background: #080808; padding: 160px 0; position: relative; }
@@ -165,9 +200,6 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.03em; }
 .contact-item:hover { transform: translateY(-10px) scale(1.1); background: #a855f7; color: #fff; }
 footer { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 80px; }
 .copyright { opacity: 0.4; font-size: 1rem; margin-top: 20px; }
-.cv-download-wrapper {
-  margin: 30px 0 50px 0;
-}
 
 .btn-cv {
   background: transparent;
@@ -181,10 +213,6 @@ footer { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-t
   gap: 12px;
 }
 
-.btn-cv i {
-  font-size: 1.1rem;
-}
-
 .btn-cv:hover {
   background: #a855f7;
   color: #fff;
@@ -193,21 +221,26 @@ footer { width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-t
   border-color: #a855f7;
 }
 
-/* Garante que os links de contacto ficam bem por baixo */
-.contact-links {
-  margin-top: 20px;
-}
-
 /* UTILS */
 .hidden { opacity: 0; transform: translateY(60px); transition: 1s cubic-bezier(0.2, 1, 0.3, 1); }
 .show { opacity: 1; transform: translateY(0); }
 .btn { display: inline-block; padding: 22px 50px; background: #a855f7; color: #fff; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: 0.3s; }
 .btn:hover { background: #9333ea; transform: scale(1.05); box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); }
 
+/* RESPONSIVIDADE */
+@media (max-width: 1100px) {
+  .tools-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 968px) {
   .hero-container { flex-direction: column; text-align: center; }
   .hero-visual { display: none; }
   .about-container { flex-direction: column-reverse; text-align: center; }
   .swiper-slide { width: 85vw; }
-  .swiper-button-next, .swiper-button-prev { display: none; } /* Esconder setas no mobile para focar no swipe */
+  .swiper-button-next, .swiper-button-prev { display: none; }
+}
+
+@media (max-width: 650px) {
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  .tool-card:hover { transform: scale(1.1); } /* Menos expansão no mobile */
 }

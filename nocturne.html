@@ -33,26 +33,39 @@
     .info-item h5 { color: #a855f7; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.05em; }
     .info-item p { color: #fff; font-size: 1.1rem; font-weight: 500; }
     .role-tag {
-      display: inline-block; padding: 4px 10px; background: rgba(168, 85, 247, 0.2);
-      border: 1px solid #a855f7; border-radius: 6px; color: #d8b4fe; font-size: 0.75rem; font-weight: 600;
-      margin-top: 8px; text-transform: uppercase;
+      display: inline-block; padding: 4px 10px; background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 6px; color: #d8b4fe; font-size: 0.75rem; font-weight: 600;
+      margin-top: 8px; text-transform: uppercase; margin-right: 5px;
     }
 
     .content-block { max-width: 800px; margin: 0 auto 100px; }
-    .content-block h3 { font-size: 2rem; color: #fff; margin-bottom: 20px; font-weight: 700; }
+    .content-block h3 { font-size: 2.2rem; color: #fff; margin-bottom: 25px; font-weight: 700; }
     .content-block p { font-size: 1.15rem; line-height: 1.7; color: #d4d4d8; margin-bottom: 20px; }
 
+    .ux-strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+    .ux-card { background: rgba(168, 85, 247, 0.03); padding: 25px; border-radius: 20px; border: 1px solid rgba(168, 85, 247, 0.1); }
+    .ux-card h5 { color: #a855f7; margin-bottom: 10px; font-size: 0.9rem; text-transform: uppercase; }
+    .ux-card p { font-size: 1rem; color: #a1a1aa; margin-bottom: 0; }
+
+    .qa-list { list-style: none; padding: 0; margin-top: 30px; }
+    .qa-list li { 
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); 
+      padding: 25px; border-radius: 20px; margin-bottom: 15px;
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .qa-list i { color: #a855f7; font-size: 1.3rem; margin-top: 5px; }
+    .qa-list strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.1rem; }
+
     .note-box {
-      border-left: 4px solid #a855f7; background: linear-gradient(90deg, rgba(168, 85, 247, 0.05) 0%, transparent 100%);
-      padding: 20px 25px; border-radius: 0 10px 10px 0; margin-top: 30px;
-      font-style: italic; color: #a1a1aa;
+      border-left: 4px solid #a855f7; background: linear-gradient(90deg, rgba(168, 85, 247, 0.08) 0%, transparent 100%);
+      padding: 25px; border-radius: 0 15px 15px 0; margin-top: 40px;
+      font-style: italic; color: #d4d4d8;
     }
 
     .full-width-img {
-      width: 100%; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.1);
-      margin: 40px 0 80px 0; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      width: 100%; border-radius: 35px; border: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 40px 0 80px 0; box-shadow: 0 30px 80px rgba(0,0,0,0.6);
     }
-
   </style>
 </head>
 <body>
@@ -84,11 +97,13 @@
           <h5>Engine</h5> <p>Roblox (Lua)</p>
         </div>
         <div class="info-item">
-          <h5>My Role</h5> <p>UX Planning & Architecture</p>
-          <span class="role-tag">Strategic Design</span>
+          <h5>My Role</h5> 
+          <p>UI/UX & QA Specialist</p>
+          <span class="role-tag">Design Strategy</span>
+          <span class="role-tag">Quality Assurance</span>
         </div>
         <div class="info-item">
-          <h5>Tools</h5> <p>Figma, Blender, After Effects</p>
+          <h5>Tools</h5> <p>Figma, After Effects, Bug Sheets</p>
         </div>
         <div class="info-item">
           <h5>Timeline</h5> <p>In progress</p>
@@ -98,10 +113,10 @@
 
     <section class="content-block fade-seq">
       <h3>The Mission</h3>
-      <p>The main objective was to architect a user interface that remained unobtrusive during intense combat while providing vital information such as health, stamina, and ability cooldown instantly and clearly.</p>
+      <p>In <strong>Nocturne Battlegrounds</strong>, the challenge was to create a combat-heavy interface that feels responsive and lightweight. My contribution evolved into a dual responsibility: architecting the user journey and ensuring technical excellence through continuous testing.</p>
       
       <div class="note-box">
-        <strong>Note:</strong> In this project, I acted as the UI/UX Architect. While the final visual assets were produced by a dedicated artist, I was responsible for the strategic placement, visual hierarchy, and the overall functionality of every element not only in the HUD, but also in the game menus.
+        <strong>Note :</strong> I bridge the gap between creative vision and technical stability. By acting as both <strong>UX Architect</strong> and <strong>QA Lead</strong>, I ensure that the final product isn't just beautiful, but also robust and bug-free.
       </div>
     </section>
 
@@ -111,7 +126,47 @@
 
     <section class="content-block">
       <h3>User Experience Strategy</h3>
-      <p>To ensure player focus, I implemented a minimal HUD approach where high-priority bars are centered but transparent enough to not block the player's sight. Secondary menus were designed to be clear, allowing the user to easily navigate without friction.</p>
+      <p>A minimalist HUD was essential to maintain player immersion during high-intensity 1v1 combat. My focus was on reducing cognitive load by placing vital information where the eye naturally rests.</p>
+      
+      <div class="ux-strategy-grid">
+        <div class="ux-card">
+          <h5>Visual Hierarchy</h5>
+          <p>Strategic placement of health and passive bars to ensure they are readable without distracting from the action.</p>
+        </div>
+        <div class="ux-card">
+          <h5>Feedback Systems</h5>
+          <p>Designing clear visual cues for ability cooldowns and combat states to keep the player informed at all times.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-block">
+      <h3>Quality Assurance & Optimization</h3>
+      <p>I believe that QA is an extension of UX. Finding and documenting bugs is how we protect the player's experience from frustration.</p>
+      
+      <ul class="qa-list">
+        <li>
+          <i class="fa-solid fa-users-viewfinder"></i>
+          <div>
+            <strong>Playtesting & Feedback Loops</strong>
+            Leading testing sessions with players to gather qualitative data on gameplay feel and UI intuitiveness.
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-table-list"></i>
+          <div>
+            <strong>Bug Tracking & Documentation</strong>
+            Developing detailed bug reports and improvement tables to streamline communication with the programming team.
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <div>
+            <strong>Gameplay Polishing</strong>
+            Translating community feedback into actionable design solutions to refine combat mechanics and menu flows.
+          </div>
+        </li>
+      </ul>
     </section>
 
   </main>
@@ -123,7 +178,7 @@
           <a href="mailto:tomasjgomes@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i></a>
           <a href="https://www.linkedin.com/in/tom%C3%A1s-gomes-089ba425a/" target="_blank" class="contact-item"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <p class="copyright">© 2026 Tomás Gomes. Designed & Planned by me.</p>
+        <p class="copyright">© 2026 Tomás Gomes. Designed & Validated by me.</p>
       </div>
     </div>
   </footer>
