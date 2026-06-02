@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ByME AI Spec Extractor | Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo_tomas.png">
+
+  <style>
+    /* Project Specific Styles */
+    .project-page { padding-top: 140px; padding-bottom: 100px; position: relative; z-index: 2; }
+    
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: #a1a1aa; text-decoration: none; font-weight: 600;
+      margin-bottom: 40px; transition: 0.3s;
+      padding: 10px 20px; border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);
+    }
+    .back-btn:hover { color: #fff; border-color: #a855f7; background: rgba(168, 85, 247, 0.1); }
+
+    .project-title { font-size: clamp(2.5rem, 5vw, 4rem); text-align: center; margin-bottom: 10px; font-weight: 800; }
+    .project-subtitle { text-align: center; color: #a1a1aa; font-size: 1.2rem; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;}
+
+    .info-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px; margin-bottom: 100px;
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px; border-radius: 30px;
+    }
+    .info-item h5 { color: #a855f7; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.05em; }
+    .info-item p { color: #fff; font-size: 1.1rem; font-weight: 500; }
+    
+    .role-tag {
+      display: inline-block; padding: 4px 10px; background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 6px; color: #d8b4fe; font-size: 0.75rem; font-weight: 600;
+      margin-top: 8px; text-transform: uppercase; margin-right: 5px;
+    }
+
+    .content-block { max-width: 800px; margin: 0 auto 100px; }
+    .content-block h3 { font-size: 2rem; color: #fff; margin-bottom: 20px; font-weight: 700; }
+    .content-block p { font-size: 1.15rem; line-height: 1.7; color: #d4d4d8; margin-bottom: 20px; }
+    .content-block strong { color: #a855f7; }
+
+    .note-box {
+      border-left: 4px solid #a855f7; background: linear-gradient(90deg, rgba(168, 85, 247, 0.08) 0%, transparent 100%);
+      padding: 25px; border-radius: 0 15px 15px 0; margin-top: 40px; margin-bottom: 40px;
+      font-style: italic; color: #d4d4d8; line-height: 1.6;
+    }
+
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+    .image-grid img, .full-width-img {
+      width: 100%; border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.4s ease;
+    }
+    .image-grid img:hover { transform: scale(1.02); border-color: rgba(168, 85, 247, 0.3); }
+
+    .ux-strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+    .ux-card { background: rgba(168, 85, 247, 0.03); padding: 25px; border-radius: 20px; border: 1px solid rgba(168, 85, 247, 0.1); }
+    .ux-card h5 { color: #a855f7; margin-bottom: 10px; font-size: 0.9rem; text-transform: uppercase; }
+    .ux-card p { font-size: 1rem; color: #a1a1aa; margin-bottom: 0; }
+
+  </style>
+</head>
+<body>
+
+  <div id="mouse-glow"></div>
+
+  <nav class="navbar">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">Tomás<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="project-page container">
+    <a href="index.html#projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+
+    <header class="fade-seq">
+      <h1 class="project-title">ByME <span class="accent">AI Workflow</span></h1>
+      <p class="project-subtitle">Automating Design Specifications with Artificial Intelligence for ByME Healthcare.</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <h5>Company</h5> <p>ByME Healthcare</p>
+        </div>
+        <div class="info-item">
+          <h5>My Role</h5> 
+          <p>UI/UX & AI Intern</p>
+          <span class="role-tag">Design Ops</span>
+          <span class="role-tag">AI Integration</span>
+        </div>
+        <div class="info-item">
+          <h5>Tools</h5> <p>Claude, Figma REST API, HTML/CSS</p>
+        </div>
+        <div class="info-item">
+          <h5>Timeline</h5> <p>8 Weeks</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="content-block fade-seq">
+      <h3>The Challenge</h3>
+      <p>During my internship at ByME Healthcare, I was tasked with solving a real and recurring problem in product teams: the manual, time-consuming, and often inconsistent process of writing technical specifications for design components.</p>
+      <p>The goal was to deeply understand the ByME Design System (MDS) in Figma and develop an efficient, scalable, and consistent automated workflow using <strong>Artificial Intelligence (Claude)</strong> to bridge the gap between design and development.</p>
+    </section>
+
+    <section class="content-block">
+      <h3>Exploration & Prototyping</h3>
+      <p>I started by exploring the capabilities of the Figma REST API. I developed a custom HTML tool that allowed designers to extract structural data from Figma components simply by pasting a URL. The tool would then generate a highly optimized prompt to be fed into an AI.</p>
+      
+      <div class="ux-strategy-grid">
+        <div class="ux-card">
+          <h5>Figma REST API Limitations</h5>
+          <p>While testing, I encountered severe rate-limiting issues with standard Figma accounts, which forced me to pivot and rethink the architecture of the automation tool.</p>
+        </div>
+        <div class="ux-card">
+          <h5>Iterative Interface Design</h5>
+          <p>I iterated on the internal tool from V.5 to V.9, refining the UI aesthetics to match ByME's branding and adding features like an extraction history for better usability.</p>
+        </div>
+      </div>
+      
+      <div class="image-grid">
+        <img src="V9_Print.png" alt="Interface of the Figma Spec Extractor Tool (V.9)">
+      </div>
+    </section>
+
+    <section class="content-block">
+      <h3>The Final AI-Powered Solution</h3>
+      <p>After realizing that standard API extraction only captured raw dimensions and colors without semantic logic, I shifted to a fully integrated AI workflow. Utilizing <strong>Claude's Model Context Protocol (MCP)</strong>, I created an intelligent documentation assistant.</p>
+      
+      <div class="note-box">
+        <strong>The Breakthrough:</strong> Instead of the AI making blind assumptions about navigation or hover states, I programmed Claude to present an <strong>interactive questionnaire</strong> to the designer. This clarified ambiguities instantly and eliminated AI hallucinations.
+      </div>
+
+      <p>The final workflow (V.12) reads the technical context directly from Figma Desktop, analyzes visual screenshots, and outputs comprehensive Markdown documents containing:</p>
+      
+      <ul style="color: #d4d4d8; font-size: 1.15rem; line-height: 1.7; margin-top: 20px; padding-left: 20px;">
+        <li><strong style="color: #fff;">Technical Specs:</strong> Design tokens, layout dimensions, typography, interaction states, and accessibility requirements.</li>
+        <li><strong style="color: #fff;">User Stories:</strong> Standardized agile formats mapping out user roles, goals, and acceptance criteria.</li>
+      </ul>
+    </section>
+
+    <section class="content-block">
+      <h3>Results & Impact</h3>
+      <p>This project proved that integrating AI into Design Ops is highly beneficial. By defining clear nomenclature rules in Figma and leveraging direct contextual reading through MCP, I successfully transformed a tedious manual task into an automated, interactive process that outputs high-fidelity developer-ready documentation.</p>
+    </section>
+
+  </main>
+
+  <footer id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-links">
+          <a href="mailto:tomasjgomes@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/tom%C3%A1s-gomes-089ba425a/" target="_blank" class="contact-item"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/txzin" target="_blank" class="contact-item"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="copyright">© 2026 Tomás Gomes. Case Study: ByME Spec Extractor.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
