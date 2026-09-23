@@ -129,12 +129,9 @@
       box-shadow: 0 24px 70px rgba(37,50,90,0.16); outline: 1px solid rgba(17,17,17,0.08); outline-offset: -1px;
     }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-    body.project-shift::before, body.project-shift::after { content: ""; position: absolute; pointer-events: none; border: 1px solid rgba(37,99,235,0.16); border-radius: 50%; transform: rotate(-12deg); }
-    body.project-shift::before { width: 330px; height: 150px; top: 150px; right: -110px; box-shadow: 0 0 0 22px rgba(139,92,246,0.04), 0 0 0 44px rgba(236,72,153,0.035); }
-    body.project-shift::after { width: 230px; height: 100px; bottom: 210px; left: -80px; border-color: rgba(236,72,153,0.15); box-shadow: 0 0 0 18px rgba(37,99,235,0.04); }
   </style>
 </head>
-<body class="project-shift">
+<body>
   <div id="mouse-glow"></div>
 
   <nav class="navbar">
@@ -181,7 +178,7 @@
         </div>
         <div class="info-item">
           <h5>Website</h5>
-          <p><a href="http://www.shiftai.pt/" target="_blank" rel="noreferrer" style="color: #fff; text-decoration: none;">shiftai.pt</a></p>
+          <p><a href="http://www.shiftai.pt/" target="_blank" rel="noreferrer" style="color: var(--text); text-decoration: none;">shiftai.pt</a></p>
         </div>
       </div>
     </header>
@@ -189,7 +186,7 @@
     <section class="shift-video-block fade-seq" aria-labelledby="shift-video-title">
       <h2 id="shift-video-title" class="sr-only">Shift Solutions introduction</h2>
       <div class="shift-video-frame">
-        <video controls preload="metadata" playsinline>
+        <video class="shift-intro-video" controls preload="metadata" playsinline muted>
           <source src="Shift_Introduction.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>

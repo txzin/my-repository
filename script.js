@@ -39,6 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
 
+    // Start the Shift introduction video when it is revealed, and pause it when it leaves view.
+    const shiftVideo = document.querySelector('.shift-intro-video');
+    if (shiftVideo) {
+        const videoObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    shiftVideo.play().catch(() => {});
+                } else {
+                    shiftVideo.pause();
+                }
+            });
+        }, { threshold: 0.35 });
+
+        videoObserver.observe(shiftVideo);
+    }
+
     // Smooth scroll para âncoras internas
     document.querySelectorAll('.js-scroll-trigger').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
