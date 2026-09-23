@@ -7,23 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
         glow.style.top = e.clientY + 'px';
     });
 
-    // Swiper Carousel com efeito dinâmico
-    const swiper = new Swiper(".mySwiper", {
-        slidesPerView: "auto",
-        centeredSlides: true,
-        spaceBetween: 80, // Espaço aumentado para o efeito de flutuar não colidir
-        grabCursor: true,
-        loop: true,
-        speed: 800,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
+    // Swiper is only used for the old carousel layout.
+    // The portfolio now uses a static project grid, so we initialize it only if the carousel exists.
+    if (document.querySelector('.mySwiper')) {
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 80,
+            grabCursor: true,
+            loop: true,
+            speed: 800,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    }
 
     // Fade in on scroll (Intersection Observer)
     const observer = new IntersectionObserver(entries => {
